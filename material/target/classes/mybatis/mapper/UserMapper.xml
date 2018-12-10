@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.material.mapper.UserMapper">
+    <select id="selectUser" resultType="com.material.entity.user.User">
+        select userId,
+               userName,
+               userPwd,
+               userSex,
+               userMail,
+               date_format(createTime,'%Y-%M-%d %T') createTime,
+               date_format(lastUpdateTime,'%Y-%M-%d %T') lastUpdateTime
+        from sys_user
+        where userId = #{userId}
+    </select>
+    <select id="selectUserInfo" resultType="com.material.entity.user.User">
+        select userName,
+               userPwd
+        from sys_user info
+        where info.userName=#{userName}
+    </select>
+    <insert id="insertUser">
+        insert into sys_user(
+                    userName,
+                    userPwd,
+                    userSex,
+                    userMail
+        )values (
+                    #{userName},
+                    #{userPwd},
+                    #{userSex},
+                    #{userMail}
+        )
+    </insert>
+</mapper>

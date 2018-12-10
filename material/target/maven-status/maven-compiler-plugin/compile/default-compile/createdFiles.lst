@@ -1,0 +1,8 @@
+com\material\service\UserService.class
+com\material\utils\MD5.class
+com\material\utils\Result.class
+com\material\entity\user\Login.class
+com\material\mapper\UserMapper.class
+com\material\entity\user\User.class
+com\material\controller\UserController.class
+com\material\entity\user\Register.class
